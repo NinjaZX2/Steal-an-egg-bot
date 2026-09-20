@@ -10,7 +10,14 @@ def send_alert():
         return
 
     data = {
-        "content": "@everyone 🚨The New Experiment Event is happening in steal an egg LIVE🚨"
+        "content": "@everyone",
+        "embeds": [
+            {
+                "title": "🚨 The New Experiment Event is Happening now 🚨",
+                "description": "[Join Game](https://www.roblox.com/discover/?keyword=steal%20an%20egg)",
+                "color": 15158332,
+            }
+        ],
     }
 
     response = requests.post(WEBHOOK_URL, json=data)
@@ -23,4 +30,4 @@ def send_alert():
 
 if __name__ == "__main__":
     send_alert()
-  
+    
